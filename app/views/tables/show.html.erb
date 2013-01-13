@@ -14,6 +14,20 @@
   <b>Table child:</b>
   <%= @table.table_child_id %>
 </p>
+<h3>Child Tables</h3>
+<table>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Other Details</th>
+</tr>
+<%for t in @table.childtables%>
+<tr>
+<td><%=t.name%></td>
+<td><%=t.description_of_Table%></td>
+<td><%= t.other_detail%></td>
+<%end%>	
+</table>
 
 
 <%= link_to 'Edit', edit_table_path(@table) %> |
