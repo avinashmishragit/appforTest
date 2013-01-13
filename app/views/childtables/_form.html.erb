@@ -1,0 +1,33 @@
+<%= form_for(@childtable) do |f| %>
+  <% if @childtable.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@childtable.errors.count, "error") %> prohibited this childtable from being saved:</h2>
+
+      <ul>
+      <% @childtable.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :table_id %><br />
+    <%= f.number_field :table_id %>
+  </div>
+  <div class="field">
+    <%= f.label :description_of_Table %><br />
+    <%= f.text_field :description_of_Table %>
+  </div>
+  <div class="field">
+    <%= f.label :other_detail %><br />
+    <%= f.text_field :other_detail %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

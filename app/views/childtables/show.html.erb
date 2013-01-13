@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @childtable.name %>
+</p>
+
+<p>
+  <b>Table:</b>
+  <%= @childtable.table_id %>
+</p>
+
+<p>
+  <b>Description of table:</b>
+  <%= @childtable.description_of_Table %>
+</p>
+
+<p>
+  <b>Other detail:</b>
+  <%= @childtable.other_detail %>
+</p>
+
+
+<%= link_to 'Edit', edit_childtable_path(@childtable) %> |
+<%= link_to 'Back', childtables_path %>

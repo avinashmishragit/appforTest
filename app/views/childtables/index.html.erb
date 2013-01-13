@@ -1,0 +1,29 @@
+<h1>Listing childtables</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Table</th>
+    <th>Description of table</th>
+    <th>Other detail</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @childtables.each do |childtable| %>
+  <tr>
+    <td><%= childtable.name %></td>
+    <td><%= childtable.table_id %></td>
+    <td><%= childtable.description_of_Table %></td>
+    <td><%= childtable.other_detail %></td>
+    <td><%= link_to 'Show', childtable %></td>
+    <td><%= link_to 'Edit', edit_childtable_path(childtable) %></td>
+    <td><%= link_to 'Destroy', childtable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Childtable', new_childtable_path %>
