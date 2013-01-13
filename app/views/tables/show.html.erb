@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Table name:</b>
+  <%= @table.table_name %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @table.desc %>
+</p>
+
+<p>
+  <b>Table child:</b>
+  <%= @table.table_child_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_table_path(@table) %> |
+<%= link_to 'Back', tables_path %>
