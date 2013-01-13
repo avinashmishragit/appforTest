@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130113080936) do
+ActiveRecord::Schema.define(:version => 20130113092147) do
+
+  create_table "childtables", :force => true do |t|
+    t.string   "name"
+    t.integer  "table_id"
+    t.string   "description_of_Table"
+    t.string   "other_detail"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
 
   create_table "tables", :force => true do |t|
     t.string   "table_name"
