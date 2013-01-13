@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @childtable %> |
-<%= link_to 'Back', childtables_path %>
+<%= link_to 'Show', [@table,@childtable] %> 
+<%= link_to 'Back', table_childtables_path(@table) %>
