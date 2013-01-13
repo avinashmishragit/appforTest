@@ -1,29 +1,36 @@
-<h1>Listing childtables</h1>
+<h1>Listing childtables for <%=@table.table_name%></h1>
+<% if !@table.childtables.empty? %>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Parent Table</th>
-    <th>Description of table</th>
-    <th>Other detail</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <table>
+   <tr>
+     <th>Name</th>
+     <th>Parent Table</th>
+     <th>Description of table</th>
+     <th>Other detail</th>
+     <th></th>
+     <th></th>
+     <th></th>
+   </tr>
 
-<% @childtables.each do |childtable| %>
-  <tr>
-    <td><%= childtable.name %></td>
-    <td><%= childtable.table.table_name%></td>
-    <td><%= childtable.description_of_Table %></td>
-    <td><%= childtable.other_detail %></td>
-    <td><%= link_to 'Show', childtable %></td>
-    <td><%= link_to 'Edit', edit_childtable_path(childtable) %></td>
-    <td><%= link_to 'Destroy', childtable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+ <% @childtables.each do |childtable| %>
+   <tr>
+     <td><%= childtable.name %></td>
+     <td><%= childtable.table.table_name%></td>
+     <td><%= childtable.description_of_Table %></td>
+     <td><%= childtable.other_detail %></td>
+     <td><%= link_to 'Show', [@table,childtable]%></td>
+     <td><%= link_to 'Edit', edit_table_childtable_path(@table,childtable) %></td>
+     <td><%= link_to 'Destroy', [@table,childtable], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+   </tr>
+ <%end%>  
+   </table>
+ </br>
+<% else %>
+  <p><%=@table.table_name %> have no childtable </p>    
 <% end %>
-</table>
 
-<br />
 
-<%= link_to 'New Childtable', new_childtable_path %>
+
+
+<%= link_to 'New Childtable', new_table_childtable_path(@table)%>
+<%=link_to 'Back',@table %>

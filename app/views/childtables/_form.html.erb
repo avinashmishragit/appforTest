@@ -1,4 +1,4 @@
-<%= form_for(@childtable) do |f| %>
+<%= form_for([@table,@childtable]) do |f| %>
   <% if @childtable.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@childtable.errors.count, "error") %> prohibited this childtable from being saved:</h2>
@@ -15,10 +15,7 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :table_id %><br />
-    <%= f.select :table_id,Table.find(:all).collect{|s|[(s.table_name),s.id]} %>
-  </div>
+  
   <div class="field">
     <%= f.label :description_of_Table %><br />
     <%= f.text_field :description_of_Table %>

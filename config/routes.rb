@@ -1,8 +1,10 @@
 Appfortest::Application.routes.draw do
-  resources :childtables
+  
 
 
-  resources :tables
+  resources :tables do
+    resources :childtables
+  end  
 
 
   # The priority is based upon order of creation:
