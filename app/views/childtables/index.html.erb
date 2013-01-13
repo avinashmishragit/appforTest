@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
-    <th>Table</th>
+    <th>Parent Table</th>
     <th>Description of table</th>
     <th>Other detail</th>
     <th></th>
@@ -14,7 +14,7 @@
 <% @childtables.each do |childtable| %>
   <tr>
     <td><%= childtable.name %></td>
-    <td><%= childtable.table_id %></td>
+    <td><%= childtable.table.table_name%></td>
     <td><%= childtable.description_of_Table %></td>
     <td><%= childtable.other_detail %></td>
     <td><%= link_to 'Show', childtable %></td>

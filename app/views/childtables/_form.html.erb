@@ -17,7 +17,7 @@
   </div>
   <div class="field">
     <%= f.label :table_id %><br />
-    <%= f.number_field :table_id %>
+    <%= f.select :table_id,Table.find(:all).collect{|s|[(s.table_name),s.id]} %>
   </div>
   <div class="field">
     <%= f.label :description_of_Table %><br />
