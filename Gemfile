@@ -10,7 +10,7 @@ gem 'sqlite3','1.3.7', :group=>:development
 #group :development do
  #gem "sqlite3-ruby",:require=> "sqlite3"
 #end
-
+gem 'pg', :group=>:production
 
 
 # Gems used only for assets and not required
